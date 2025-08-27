@@ -1,0 +1,133 @@
+--[[
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⢻⠉⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⢀⣾⠗⠀⢸⡆⠀⠪⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠾⢻⡧⠀⠀⠀⠀⠀⣾⠣⠀⠀⠈⢿⠀⠀⠀⠿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠃⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠔⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡶⠋⠀⢸⣁⣤⣀⣀⣀⢸⡏⠀⠀⠀⠀⢸⡄⠀⠀⢽⣏⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣰⠇⠸⣷⣶⠀⠀⠀⠀⠀⢀⣀⣠⣤⣤⣤⣤⣀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣶⠉⠀⠀⠀⠸⠉⠀⠈⠉⠉⠿⠿⣶⣶⣀⡀⠸⡇⠀⠀⠈⣿⡉⠿⠷⣶⣆⣀⡀⠀⠀⠀⠀⠀⢰⣿⡿⠀⠀⢿⣸⢀⣀⣶⡶⠿⠏⠉⠁⠀⣀⡶⠏⢹⣇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠄⠀⠀⢿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⣾⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠛⠿⠶⠶⠾⠿⠶⠶⠶⠾⠿⣿⠛⠳⢦⣄⠄⠿⡚⣃⣤⠶⠟⠛⠉⠉⠀⠀⠀⠀⠀⣠⠞⠉⠀⠀⠀⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠁⠀⠀⠀⠀⠙⠂⠀⠀⠀⠀⢀⣠⡤⣖⣯⡿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⡟⠞⠀⠀⠈⠳⠖⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⣀⣠⠴⠞⢯⣡⠿⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣄⡤⠴⠶⠛⣿⠆⢀⣰⠟⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃⠀⠀⠀⠀⠀⠀⠀⢸⠇
+⠀⠀⠀⠀⠀⠀⠀⠀⣄⣄⡀⠈⠓⣂⣠⠤⠖⠋⠉⡀⣰⡾⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⣰⣟⣠⠞⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡹⠖⠋⠉⠀⠀⠀⢀⣴⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠟⠙⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠳⣄⠀⠀⠀⣠⡴⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣇⠀⠀⢺⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⢚⣿⠿⠀⠀⠀⠀⠀⠀⠀⣸⢧⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠲⣠⠾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡀⠀⠀⠀⠀⠀⠀⢀⡿⠀⠀
+⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡄⠀⠈⣿⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠓⢬⣷⡀⠀⠀⠀⠀⠀⣼⠓⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⡖⢒⡶⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡟⠿⣤⡀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⠃⠀⠀⢹⡇⠀⣿⠀⠀⠀⠀⢠⣶⠾⠛⠛⠿⢶⣥⡀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⢰⣏⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣀⡟⠺⣗⢤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⡀⠀⠀⠀⠀⠀⠙⠿⣷⣶⣶⣤⣤⣤⣤⣴⡀⠀⠀⠀⣏⣴⣆⡀⢸⣷⢘⣿⢠⠆⢠⡀⠁⠀⠀⠀⠀⠀⠐⠽⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠈⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠉⠿⠏⠈⢶⡈⠹⢷⣆⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡉⠉⠉⠿⠿⠉⠀⠀⠀⠀⢿⣆⢈⡹⠿⠁⠰⣿⡿⢀⡏⢀⡆⠀⠀⠀⠀⠀⠀⠀⢹⣷⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠉⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⢦⣀⡉⠙⠓⠶⠦⣤⣄⣀⣀⠀⡀⠀⠀⠀⠀⣰⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⢠⡏⢀⡶⠀⠀⠀⠀⠀⠀⠀⠙⢯⣵⣦⡀⢰⣿⡇⠞⠑⣾⣿⣷⠀⠀⠀⠀⠀⠀⢸⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⢲⡏⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠦⢤⣀⡀⠀⠀⢠⣾⣧⣄⠀⠀⣼⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠙⠀⠼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡇⠻⣌⣿⠥⠀⠀⠘⠋⠁⠀⠀⠀⠀⠀⠀⣾⡏⠃⠀⠸⢤⡀⠀⠀⠀⢠⡟⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠒⠺⠥⣥⣸⣶⣿⣓⣠⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠣⠁⠙⠛⠃⠀⣰⠆⠠⡆⠀⣤⢀⡀⠀⣠⡿⠄⠀⠀⠀⠀⢻⡄⠀⢀⡟⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢿⣿⣟⠋⠁⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⢀⡴⡋⠃⠀⠀⠀⠀⠀⡼⠁⣠⡝⠁⣸⢃⡞⠁⣼⡿⠁⠀⠀⠀⠀⠀⠘⣿⠠⠟⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⢀⣰⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣾⣟⣠⣤⡴⡶⢿⡉⠀⠀⠀⣤⠀⠀⠀⠘⠁⠀⠋⠁⠘⠃⠾⠁⣰⡏⠀⠀⠀⠀⠀⠀⠀⠀⢿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠿⣾⣯⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣧⠀⠀⠀⣹⡌⠁⠀⠀⠀⣿⣯⡀⠀⠀⠀⠀⠀⠀⠀⡀⣀⣤⣦⣧⠀⠐⡷⢦⣤⣀⡀⢀⣸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠃⣼⡆⠀⠀⠀⢠⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠘⣇⠀⣰⡏⠀⠀⠀⠀⠀⣭⡿⠁⠀⠀⠀⠀⠀⠀⠀⠛⠉⣴⡟⠁⠀⢀⡇⠀⠈⠙⢿⣻⠾⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⣰⠛⣷⠀⠀⣰⡟⠠⣷⣴⡆⠀⠀⠀⠀⠠⣿⠓⣻⣾⡏⠀⠀⠀⠀⢠⣟⣋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⡅⠀⠀⢀⣸⠃⢰⢿⡛⠉⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣴⠃⠀⢹⣇⣹⡿⠀⠀⠹⠿⠁⠀⠀⠘⠻⣴⣿⡞⢯⣼⡥⠚⠀⠀⠀⠀⠁⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣤⣀⣨⡿⣴⣈⣾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⠇⠀⠀⠘⢻⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢿⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣠⣤⠤⠶⠚⠋⠁⠀⠛⠛⠳⢤⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡏⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠿⠿⢶⣶⠾⠿⠏⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣟⡙⠛⠲⢦⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣤⣰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠇⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠋⠁⠀⠀⠀⠀⠀⠀⠉⠛⠲⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⡴⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠲⣄⠀⠀⠀⠀⠀⠠⣾⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⣠⡤⠴⠺⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠔⠀⠄⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠐⠢⠤⣀⣀⠀⠀⠀⠀⠀⠀⣻⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠈⣀⣀⡀⠐⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+• fsploit is officially a furry LOL
+• bedol hub remake module?
+• credits for dendenzzz fo this module
+]]--
+
+local Workspace = game:GetService("Workspace")
+local UserInputService = game:GetService("UserInputService")
+local Players = game:GetService("Players")
+
+local Player = Players.LocalPlayer
+local Camera = Workspace.CurrentCamera
+local LastInput = UserInputService:GetLastInputType()
+local Vector2MouseLocation = nil
+
+local Utility = {}
+
+local Parry_Remote = true
+local Parry_Key = nil
+local Parry_Arg = nil
+local Parries = 0
+local Selected_Parry_Type = "Custom"
+
+task.spawn(function()
+    for _, value in pairs(getgc()) do
+        if type(value) == "function" and islclosure(value) then
+            local protos = debug.getprotos(value)
+            local upvalues = debug.getupvalues(value)
+            local constants = debug.getconstants(value)
+            if #protos == 4 and #upvalues == 24 and #constants >= 102 then
+                Parry_Key = debug.getupvalue(value, 17)
+                Parry_Remote = debug.getupvalue(value, 18)
+                Parry_Arg = debug.getconstant(value, 64)
+                break
+            end
+        end
+    end
+    if not Parry_Remote then
+        warn("[Parry Remote Detection] Failed to find Parry_Remote")
+    else
+        print("[Parry Remote Detection] Success: Remote =", Parry_Remote and Parry_Remote.Name or "nil", "Key =", Parry_Key, "Arg =", Parry_Arg)
+    end
+end)
+
+function Utility:GetParryData(Type)
+    local Events = {}
+    if LastInput == Enum.UserInputType.MouseButton1 or 
+       (Enum.UserInputType.MouseButton2 or LastInput == Enum.UserInputType.Keyboard) then
+        local MouseLocation = UserInputService:GetMouseLocation()
+        Vector2MouseLocation = {MouseLocation.X, MouseLocation.Y}
+    else
+        Vector2MouseLocation = {Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2}
+    end
+    for _, V in pairs(Workspace.Alive:GetChildren()) do
+        Events[tostring(V)] = Camera:WorldToScreenPoint(V.HumanoidRootPart.Position)
+    end
+    if Type == "Custom" then
+        return {0, Camera.CFrame, Events, Vector2MouseLocation}
+    elseif Type == "Backwards" then
+        return {0, CFrame.new(Camera.CFrame.Position, Camera.CFrame.Position + (-Camera.CFrame.LookVector * 9999)), Events, Vector2MouseLocation}
+    elseif Type == "Random" then
+        return {0, CFrame.new(Camera.CFrame.Position, Vector3.new(math.random(-9999, 9999), math.random(-9999, 9999), math.random(-9999, 9999))), Events, Vector2MouseLocation}
+    end
+    return Type
+end
+
+function Utility:Parry(parryType)
+    if not Parry_Remote then
+        warn("[Auto_Parry.Parry] Parry_Remote is nil, cannot parry")
+        return false
+    end
+    local Parry_Data = Utility:GetParryData(parryType or Selected_Parry_Type)
+    if not Parry_Data then
+        warn("[Auto_Parry.Parry] Failed to get Parry_Data")
+        return false
+    end
+    local Hash
+    if type(Parry_Arg) == "string" and string.match(Parry_Arg, "PARRY_HASH_FAKE") then
+        Hash = nil
+    else
+        Hash = Parry_Arg
+    end
+    local success, err = pcall(function()
+        Parry_Remote:FireServer(Hash, Parry_Key, Parry_Data[1], Parry_Data[2], Parry_Data[3], Parry_Data[4])
+    end)
+    if not success then
+        warn("[Auto_Parry.Parry] Failed to fire remote:", err)
+        return false
+    end
+    if Parries >= 7 then return false end
+    Parries = Parries + 1
+    task.delay(0.55, function()
+        if Parries > 0 then Parries = Parries - 1 end
+    end)
+    return true
+end
+
+return Utility
